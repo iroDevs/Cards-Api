@@ -18,6 +18,14 @@ class App {
     }
 
     private database (): void {
-        mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@localhost:27017`)
+        mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@localhost:27017/CardDB`)
+    }
+
+    private routes (): void {
+        this.expres.get('/', (req, res) => {
+            return res.send("Hello World");
+        });
     }
 }
+
+export default new App().expres
