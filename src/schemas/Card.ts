@@ -1,5 +1,5 @@
 import { Schema , model } from "mongoose";
-
+import CardInterface from "../interface/CardInterface";
 
 const CardSchema = new Schema({
     nome: String,
@@ -11,4 +11,4 @@ const CardSchema = new Schema({
     timestamps: true
 });
 
-export default model('Cards',CardSchema)
+export default model<CardInterface>('Cards',CardSchema)
