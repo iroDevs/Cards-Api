@@ -4,13 +4,13 @@ import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
 
 class App {
-    public expres: express.Application 
+    public express: express.Application 
 
     public constructor() {
         dotenv.config()
-        this.expres = express()
-        this.expres.use(express.json())
-        this.expres.use(cors())
+        this.express = express()
+        this.express.use(express.json())
+        this.express.use(cors())
 }
     private middleware (): void {
         console.log("entrou no middleware");
@@ -22,10 +22,10 @@ class App {
     }
 
     private routes (): void {
-        this.expres.get('/', (req, res) => {
+        this.express.get('/', (req, res) => {
             return res.send("Hello World");
         });
     }
 }
 
-export default new App().expres
+export default new App().express
