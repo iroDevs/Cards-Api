@@ -9,11 +9,15 @@ class App {
     public constructor() {
         dotenv.config()
         this.express = express()
-        this.express.use(express.json())
-        this.express.use(cors())
+        
+        this.middleware()
+        this.database()
+        this.routes()
+        
 }
     private middleware (): void {
-        console.log("entrou no middleware");
+        this.express.use(express.json())
+        this.express.use(cors())
         
     }
 
