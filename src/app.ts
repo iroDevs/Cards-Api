@@ -8,8 +8,7 @@ class App {
 
     public constructor() {
         dotenv.config()
-        this.express = express()
-        
+        this.express = express() 
         this.middleware()
         this.database()
         this.routes()
@@ -22,7 +21,7 @@ class App {
     }
 
     private database (): void {
-        mongoose.connect(`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@localhost:27017/CardDB`)
+        mongoose.connect(`mongodb://localhost:27017/CardDB`)
     }
 
     private routes (): void {
