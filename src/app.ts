@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
+import routes from './Routes/CardRoute'
 
 class App {
     public express: express.Application 
@@ -25,9 +27,7 @@ class App {
     }
 
     private routes (): void {
-        this.express.get('/', (req, res) => {
-            return res.send("Hello World");
-        });
+      this.express.use(routes)
     }
 }
 
